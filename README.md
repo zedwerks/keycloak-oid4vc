@@ -27,17 +27,19 @@ Benefits of using OIDC4VCAuthn for user authentication
 ### How OIDC4VCAuthN works
 
 OIDC4VCAuthn follows a similar flow to traditional OpenID Connect authentication, but with VCs replacing traditional authentication methods:
-	1.	Authentication Request
-	•	A Relying Party (RP) (e.g., a website or application) requests authentication from the user.
-	•	Instead of username/password, it asks for a Verifiable Credential that meets certain criteria.
-	2.	Presentation of Verifiable Credential
-	•	The user selects an appropriate Verifiable Credential stored in their digital wallet (mobile app, browser extension, etc.).
-	•	The credential is sent to the RP following an OIDC-based authorization flow.
-	3.	Credential Verification
-	•	The RP (or an external verifier) validates the credential:
-	•	Checking issuer signatures (to verify authenticity).
-	•	Ensuring it hasn’t been revoked.
-	•	Confirming it meets policy requirements.
-	4.	Authentication Success & Token Issuance
-	•	If valid, the RP issues an OIDC ID Token confirming authentication.
-	•	The user is granted access to the system.
+
+1. Authentication Request
+- A Relying Party (RP) (e.g., a website or application) requests authentication from the user.
+- Instead of username/password, it asks for a Verifiable Credential that meets certain criteria.
+2.	Presentation of Verifiable Credential
+- The user selects an appropriate Verifiable Credential stored in their digital wallet (mobile app, browser extension, etc.).
+- The credential is sent to the RP following an OIDC-based authorization flow.
+
+3.	Credential Verification
+- The RP (or an external verifier) validates the credential:
+- Checking issuer signatures (to verify authenticity).
+- Ensuring it hasn’t been revoked.
+- Confirming it meets policy requirements.
+4.	Authentication Success & Token Issuance
+- If valid, the RP issues an OIDC ID Token confirming authentication.
+- The user is granted access to the system.
