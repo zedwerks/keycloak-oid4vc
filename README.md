@@ -1,4 +1,10 @@
 # keycloak-oidc4vcauthn
+
+![Badge-License]
+
+![Badge-Maturing]
+
+
 SPI that implements custom authenticator for OIDC4VCAuthN protocol  
 
 A Java SPI for Keycloak that supports OIDC4VCAuthn (OpenID Connect for Verifiable Credential Authentication). This SPI integrates Verifiable Credential (VC) authentication into Keycloak’s authentication flow.
@@ -10,19 +16,19 @@ Steps for Integration
 
 ## Key Features
 
-✅ Accepts Verifiable Credentials from a user’s digital wallet.
-✅ Uses an external verifier (e.g., a Verifiable Data Registry or DID resolver) to validate the credential.
-✅ Implements Keycloak’s Authentication SPI for integration into Keycloak flows.
+- ✅ Accepts Verifiable Credentials from a user’s digital wallet.
+- ✅ Uses an external verifier (e.g., a Verifiable Data Registry or DID resolver) to validate the credential.
+- ✅ Implements Keycloak’s Authentication SPI for integration into Keycloak flows.
 
 ## Benefits
 
 Benefits of using OIDC4VCAuthn for user authentication
 
-✅ Eliminates Passwords – Reduces phishing risks and security breaches.
-✅ Improves Privacy – Users control what they share, avoiding unnecessary data exposure.
-✅ Strong Authentication – Uses cryptographic verification, reducing fraud risks.
-✅ Interoperable – Works across industries and ecosystems using open standards.
-✅ User-Centric – The user owns and controls their credentials, increasing trust.
+- ✅ Eliminates Passwords – Reduces phishing risks and security breaches.
+- ✅ Improves Privacy – Users control what they share, avoiding unnecessary data exposure.
+- ✅ Strong Authentication – Uses cryptographic verification, reducing fraud risks.
+- ✅ Interoperable – Works across industries and ecosystems using open standards.
+- ✅ User-Centric – The user owns and controls their credentials, increasing trust.
 
 ### How OIDC4VCAuthN works
 
@@ -43,3 +49,7 @@ OIDC4VCAuthn follows a similar flow to traditional OpenID Connect authentication
 4.	Authentication Success & Token Issuance
 - If valid, the RP issues an OIDC ID Token confirming authentication.
 - The user is granted access to the system.
+  
+[Badge-License]: https://img.shields.io/badge/license-apache%202.0-60C060.svg
+[Badge-Maturing]: https://img.shields.io/badge/Lifecycle-Maturing-007EC6
+[Badge-Stable]: https://img.shields.io/badge/status-Stable-brightgreen
