@@ -1,4 +1,4 @@
-package com.zedwerks.keycloak.broker.providers;
+package com.zedwerks.keycloak.broker.siopv2;
 
 import org.keycloak.broker.oidc.OIDCIdentityProvider;
 import org.keycloak.broker.oidc.OIDCIdentityProviderConfig;
