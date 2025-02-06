@@ -5,9 +5,9 @@
 ![Badge-Maturing]
 
 
-SPI that implements custom authenticator for OIDC4VCAuthN protocol  
+SPI that implements custom authenticator for Self-Issued OpenID Provider v2 (SIOPv2) and OID4VCI specifications.  
 
-A Java SPI for Keycloak that supports OIDC4VCAuthn (OpenID Connect for Verifiable Credential Authentication). This SPI integrates Verifiable Credential (VC) authentication into Keycloak’s authentication flow.
+A Java SPI for Keycloak that supports SIOPv2 (OpenID Connect for Verifiable Credential-based Authentication). This SPI integrates Verifiable Credential (VC) authentication into Keycloak’s authentication flow.
 
 Steps for Integration
 	1.	Implement an Authentication Provider – This will verify VCs using an external verifier.
@@ -16,39 +16,46 @@ Steps for Integration
 
 ## Key Features
 
-- ✅ Accepts Verifiable Credentials from a user’s digital wallet.
-- ✅ Uses an external verifier (e.g., a Verifiable Data Registry or DID resolver) to validate the credential.
-- ✅ Implements Keycloak’s Authentication SPI for integration into Keycloak flows.
+- Accepts Verifiable Credentials from a user’s digital wallet.
+- Uses an external verifier (e.g., a Verifiable Data Registry or DID resolver) to validate the credential.
+- Implements Keycloak’s Authentication SPI for integration into Keycloak flows.
 
 ## Benefits
 
-Benefits of using OIDC4VCAuthn for user authentication
+Benefits of using SIOPv2 for user authentication
 
-- ✅ Eliminates Passwords – Reduces phishing risks and security breaches.
-- ✅ Improves Privacy – Users control what they share, avoiding unnecessary data exposure.
-- ✅ Strong Authentication – Uses cryptographic verification, reducing fraud risks.
-- ✅ Interoperable – Works across industries and ecosystems using open standards.
-- ✅ User-Centric – The user owns and controls their credentials, increasing trust.
+- Eliminates Passwords – Reduces phishing risks and security breaches.
+- Improves Privacy – Users control what they share, avoiding unnecessary data exposure.
+- Strong Authentication – Uses cryptographic verification, reducing fraud risks.
+- Interoperable – Works across industries and ecosystems using open standards.
+- User-Centric – The user owns and controls their credentials, increasing trust.
 
-### How OIDC4VCAuthN works
+### How SIOPv2 works
 
-OIDC4VCAuthn follows a similar flow to traditional OpenID Connect authentication, but with VCs replacing traditional authentication methods:
+SIOPv2 follows a similar flow to traditional OpenID Connect authentication, but with VCs replacing traditional authentication methods:
 
-1. Authentication Request
-- A Relying Party (RP) (e.g., a website or application) requests authentication from the user.
-- Instead of username/password, it asks for a Verifiable Credential that meets certain criteria.
-2.	Presentation of Verifiable Credential
-- The user selects an appropriate Verifiable Credential stored in their digital wallet (mobile app, browser extension, etc.).
-- The credential is sent to the RP following an OIDC-based authorization flow.
+- SIOPv2 integrates with Keycloak acting as a custom external Identity Provider plugin that:
 
-3.	Credential Verification
-- The RP (or an external verifier) validates the credential:
-- Checking issuer signatures (to verify authenticity).
-- Ensuring it hasn’t been revoked.
-- Confirming it meets policy requirements.
-4.	Authentication Success & Token Issuance
-- If valid, the RP issues an OIDC ID Token confirming authentication.
-- The user is granted access to the system.
+ • Accept a DID (Decentralized Identifier) or JWK-based authentication.
+ • Verify the SIOPv2 ID Token.
+ • Verify the Verifiable Presentation (VP) using a trusted Verifiable Data Registry (e.g., blockchain, decentralized ledger, or an external
+verification service).
+
+3. Extend Keycloak to Verify Verifiable Credentials (VCs)
+	•	Use Keycloak’s Custom Authentication SPI to process Verifiable Credentials within the authentication pipeline.
+	•	Implement a plugin that:
+	•	Extracts the Verifiable Credential (VC) from the VP.
+	•	Validates the cryptographic signature of the VC.
+	•	Checks the trust framework (e.g., did:web, did:ethr, W3C-based trust anchors).
+	•	Maps VC claims to Keycloak user attributes or roles.
+
+4. Configure an OIDC Client for SIOPv2
+	•	Configure Keycloak’s OIDC client settings to allow authentication via SIOPv2.
+	•	Adjust the authentication request to support openid:// and DID-based interactions.
+
+5. Customize Keycloak’s Token Exchange
+	•	If the RP requires JWT-based access tokens, implement token exchange within Keycloak.
+	•	Convert Verifiable Credentials into OIDC claims in the issued ID Token.
 
 ## How to Use the SPI
 
