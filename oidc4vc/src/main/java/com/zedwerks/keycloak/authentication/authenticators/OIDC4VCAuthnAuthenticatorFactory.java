@@ -1,4 +1,4 @@
-package com.zedwerks.keycloak.authenticators.oidc4vc;
+package com.zedwerks.keycloak.authentication.authenticators;
 
 import org.keycloak.authentication.Authenticator;
 import org.keycloak.authentication.AuthenticatorFactory;

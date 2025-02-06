@@ -1,4 +1,4 @@
-package com.example.keycloak.oidc4vc;
+package com.example.keycloak.authentication.authenticators;
 
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
@@ -19,7 +19,7 @@ import java.nio.charset.StandardCharsets;
 import org.json.JSONObject;
 import java.util.Scanner;
 
-public class OIDC4VCAuthnAuthenticator extends AbstractDirectGrantAuthenticator {
+public class OID4VCAuthenticator extends AbstractDirectGrantAuthenticator {
 
     private static final Logger LOG = Logger.getLogger(OIDC4VCAuthnAuthenticator.class);
     private static final String VC_VERIFIER_URL = "https://verifier.example.com/verify"; // Replace with actual VC verification service URL

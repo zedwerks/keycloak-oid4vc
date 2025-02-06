@@ -1,4 +1,4 @@
-package com.zedwerks.keycloak.authenticator.oidc4vci;
+package com.zedwerks.keycloak.authentication.authenticators;
 
 import org.keycloak.authentication.AuthenticationFlowContext;
 import org.keycloak.authentication.AuthenticationFlowError;
@@ -12,9 +12,9 @@ import org.jboss.logging.Logger;
 import javax.ws.rs.core.Response;
 import org.json.JSONObject;
 
-public class OIDC4VCIIssuerProvider extends AbstractDirectGrantAuthenticator {
+public class OID4VCIIssuerProvider extends AbstractDirectGrantAuthenticator {
 
-    private static final Logger LOG = Logger.getLogger(OIDC4VCIIssuerProvider.class);
+    private static final Logger LOG = Logger.getLogger(OID4VCIIssuerProvider.class);
 
     @Override
     public void authenticate(AuthenticationFlowContext context) {
