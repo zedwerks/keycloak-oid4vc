@@ -60,7 +60,7 @@ verification service).
 ## How to Use the SPI
 
 ```bash
-cp target/zedwerks-oidc4vcauthn.jar /opt/keycloak/providers/
+cp target/zedwerks-oidc4vp.jar /opt/keycloak/providers/
 ```
 Then restart keycloak:
 
@@ -68,7 +68,7 @@ Then restart keycloak:
 bin/kc.sh build
 bin/kc.sh start
 ```
-### Configure the Keycloak Realm to use OIDC4VCAuthN authenticator
+### Configure the Keycloak Realm to use OID4VP authenticator
 
 1. Go to Keycloak Admin Console → Select your realm.
 2. Navigate to Authentication → Flows.
