@@ -1,4 +1,4 @@
-# keycloak-oidc4vcauthn
+# keycloak-oidc4vp
 
 ![Badge-License]
 
