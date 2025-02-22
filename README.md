@@ -5,7 +5,7 @@
 ![Badge-Maturing]
 
 
-SPI that implements custom authenticator for Self-Issued OpenID Provider v2 (SIOPv2) and OID4VCI specifications.  
+SPI that implements custom authenticator for Self-Issued OpenID Provider v2 (SIOPv2) and Open ID for Verifiable Presentation (OID4VP) specifications.  
 
 A Java SPI for Keycloak that supports SIOPv2 (OpenID Connect for Verifiable Credential-based Authentication). This SPI integrates Verifiable Credential (VC) authentication into Keycloak’s authentication flow.
 
