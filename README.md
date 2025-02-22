@@ -73,7 +73,7 @@ bin/kc.sh start
 1. Go to Keycloak Admin Console → Select your realm.
 2. Navigate to Authentication → Flows.
 3. Create a new authentication flow or edit an existing one (browser flow)
-4. Add an execution step → Select OIDC4VC Authenticator as the provider.
+4. Add an execution step → Select 'OIDC4VP Authenticator' as the provider.
 5. Set the requirement to REQUIRED.
 6. Save the flow and apply it to a client.
 
